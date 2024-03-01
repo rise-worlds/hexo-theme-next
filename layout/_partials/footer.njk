@@ -5,11 +5,12 @@
       <img src="{{ url_for(theme.footer.beian.gongan_icon_url) }}" alt="">
     {%- endif %}
     {%- if theme.footer.beian.gongan_id and theme.footer.beian.gongan_num %}
-      {{- next_url('http://www.beian.gov.cn/portal/registerSystemInfo?recordcode=' + theme.footer.beian.gongan_id, theme.footer.beian.gongan_num + ' ') }}
+      {{- next_url('https://beian.mps.gov.cn/#/query/webSearch?code=' + theme.footer.beian.gongan_id, theme.footer.beian.gongan_num + ' ') }}
     {%- endif %}
   </div>
 {%- endif %}
 
+{%- if theme.footer.copyright !== false %}
 <div class="copyright">
 <a href="https://icp.gov.moe/?keyword=20233669" target="_blank">萌ICP备20233669号</a>
 </div>
@@ -23,6 +24,7 @@
   </span>
   <span class="author" itemprop="copyrightHolder">{{ theme.footer.copyright or author }}</span>
 </div>
+{%- endif %}
 
 {%- if config.symbols_count_time.total_symbols or config.symbols_count_time.total_time %}
 <div class="wordcount">
